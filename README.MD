@@ -21,7 +21,8 @@ I have used several packages. Please install them and follow their installation 
 After the `composer install` do a `php artisan migrate --package=cartalyst/sentry` for the Sentry2 package and a `php artisan migrate` for the Android-Libs tables.
 
 
-** Stuff **
+Stuff
+========
 
 Thanks for any contributions made!
 Also thank you for submitting your libraries to Android-Libs.com
