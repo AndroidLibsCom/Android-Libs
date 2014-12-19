@@ -136,6 +136,11 @@
             </a>
         </li>
         <li>
+            <a href="https://gitter.im/Cyruxx/Android-Libs" target="_blank">
+                <i class="fa fa-fw fa-comments"></i> CHAT
+            </a>
+        </li>
+        <li>
             <a href="{{ url('/rss') }}" target="_blank">
                 <i class="fa fa-fw fa-rss-square"></i> RSS
             </a>
