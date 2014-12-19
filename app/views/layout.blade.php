@@ -150,6 +150,9 @@
         <li>
             <a href="http://twitter.com/AlexMahrt" target="_blank"><i class="fa fa-fw fa-twitter"></i> AlexMahrt</a>
         </li>
+        <li>
+            <a href="https://gratipay.com/cyruxx" target="_blank"><i class="fa fa-fw fa-heart"></i> GratiPay</a>
+        </li>
         @if( Sentry::check() )
         <li class="dropdown">
             <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
