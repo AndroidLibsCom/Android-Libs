@@ -7,7 +7,7 @@ Because of my passwords and keys are stored in `/app/config/app.php` and `/app/c
 
 Get a fresh one from a Laravel 4.2 project.
 
-Do a ´composer install` in the root directory.
+Do a `composer install` in the root directory.
 
 I have used several packages. Please install them and follow their installation instructions:
 * [Laravel IDE Helper Generator] (https://github.com/barryvdh/laravel-ide-helper)
@@ -26,4 +26,7 @@ After the `composer install` do a `php artisan migrate --package=cartalyst/sentr
 Thanks for any contributions made!
 Also thank you for submitting your libraries to Android-Libs.com
 
-You can thank me by GratiPay: [![GratiPay - Cyruxx](http://img.shields.io/gratipay/Cyruxx.svg)](https://gratipay.com/Cyruxx/)
+I would appreciate any supports on GratiPay:
+
+
+[![GratiPay - Cyruxx](http://img.shields.io/gratipay/Cyruxx.svg)](https://gratipay.com/Cyruxx/)
