@@ -103,10 +103,10 @@
             </ul>
         </li>
         <li>
-            <a href="{{ url('/submit') }}"><i class="fa fa-fw fa-envelope"></i> SUBMIT A LIBRARY</a>
+            <a href="{{ url('/submit') }}"><i class="fa fa-fw fa-envelope"></i> SUBMIT</a>
         </li>
         <li class="dropdown">
-            <a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-share-alt"></i> Share</a>
+            <a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-share-alt"></i> SHARE</a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="#" class="sharrre-counters facebook btn-labeled" data-text="Cool library list! @Android_Libs" data-url="{{ url('/') }}" data-share="facebook">
@@ -126,13 +126,18 @@
             </ul>
         </li>
         <li>
-            <a href="{{ url('/rss') }}" target="_blank">
-                <i class="fa fa-fw fa-rss-square"></i> RSS
+            <a href="#creditModal" data-toggle="modal">
+                <i class="fa fa-fw fa-star"></i> CREDITS
             </a>
         </li>
         <li>
-            <a href="#creditModal" data-toggle="modal">
-                <i class="fa fa-fw fa-star"></i> Awesome Stuff
+            <a href="https://github.com/Cyruxx/Android-Libs" target="_blank">
+                <i class="fa fa-fw fa-github-square"></i> REPO
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('/rss') }}" target="_blank">
+                <i class="fa fa-fw fa-rss-square"></i> RSS
             </a>
         </li>
     </ul>

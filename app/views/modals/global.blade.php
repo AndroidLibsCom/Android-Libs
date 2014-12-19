@@ -13,6 +13,7 @@
                 <hr>
                 <h4>Tools & more</h4>
                 <ul>
+                    <li><a href="https://github.com/Cyruxx/Android-Libs" target="_blank">Android-Libs.com - GitHub Repository</a></li>
                     <li><a href="http://bootsnipp.com" target="_blank">BootSnipp.com - Twitter Bootstrap snippets</a></li>
                     <li><a href="https://android-arsenal.com" target="_blank">Android-Arsenal - Another Android library list</a></li>
                     <li><a href="http://romannurik.github.io/AndroidAssetStudio" target="_blank">Android Asset Studio - Generators and more</a></li>
