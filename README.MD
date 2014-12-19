@@ -3,9 +3,9 @@ Android-Libs
 [![License](http://img.shields.io/badge/license-GPL--2.0-green.svg)](http://choosealicense.com/licenses/gpl-2.0/)
 
 
-Because of my passwords and keys are stored in `/app/config/app.php` and `/app/config/database.php` I had to remove them from the repository.
+Because of my passwords stored in `/app/config/database.php` I had to remove it from the repository.
 
-Get a fresh one from a Laravel 4.2 project.
+Get a fresh one from [here.](https://github.com/laravel/laravel/blob/master/app/config/database.php)
 
 Do a `composer install` in the root directory.
 
