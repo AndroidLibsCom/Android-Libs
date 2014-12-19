@@ -2,6 +2,8 @@ Android-Libs
 ============
 [![License](http://img.shields.io/badge/license-GPL--2.0-green.svg)](http://choosealicense.com/licenses/gpl-2.0/)
 
+Android-Libs is a portal with hundreds of android libraries and tools for developers.
+
 
 Because of my passwords stored in `/app/config/database.php` I had to remove it from the repository.
 
