@@ -100,6 +100,43 @@ Route::get('/test', function() {
     set_time_limit(0);
 
 
+
+
+    # Licenses
+    $oLibs      = Libraries::all();
+    $aFileNames = [ 'README', 'README.md' ];
+    $i = 0;
+    foreach($aFileNames as $sFile)
+    {
+        foreach($oLibs as $oLib)
+        {
+            if($oLib->isGitHubUrl())
+            {
+                try {
+                    $aGitHub            = GitHub::repo()->contents()->show($oLib->getGitHubUserName(), $oLib->getGitHubRepoName(), '/' . $sFile);
+                    $sDecodedContent    = base64_decode($aGitHub['content']);
+
+                    if(preg_match("/compile '([a-z].*)'/i", $sDecodedContent, $aCompStrings) === 1)
+                    {
+                        if(count($aCompStrings) == 2)
+                        {
+                            $oLib->gradle = $aCompStrings[1];
+                            $oLib->save();
+                            $i++;
+                        }
+                    }
+
+                } catch (Exception $ex) {
+                    /*if($i == 2)
+                    {
+                        return Response::json(['error' => true, 'message' => $ex->getMessage()]);
+                    }*/
+                }
+            }
+        }
+    }
+    return Response::json(['libs_changed' => $i ]);
+
     /*
     # Licenses
     $aFileNames = [ 'LICENSE', 'LICENSE.md', 'LICENSE.txt' ];
