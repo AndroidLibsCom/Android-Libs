@@ -164,6 +164,7 @@ class LibraryController extends BaseController
         $sInputTitle          = Input::get('inputTitle');
         $sInputUrl            = Input::get('inputUrl');
         $sInputDesc           = Input::get('inputDesc');
+        $sInputGradle         = Input::get('inputGradle');
         $sInputCat            = Input::get('inputCategory');
         $sInputMinSdk         = Input::get('inputMinSdk');
         $oInputImage          = Input::file('inputImage');
@@ -190,6 +191,7 @@ class LibraryController extends BaseController
         $oLib                  = new Libraries;
         $oLib->title           = $sInputTitle;
         $oLib->url             = $sInputUrl;
+        $oLib->gradle          = $sInputGradle;
         $oLib->disqus          = $sDisqusId;
         $oLib->min_sdk         = $sInputMinSdk;
         $oLib->public          = false;
