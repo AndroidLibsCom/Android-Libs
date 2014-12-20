@@ -65,6 +65,9 @@
                     	    <input type="url" class="form-control" name="url" placeholder="URL" required>
                     	</div>
                     	<div class="form-group">
+                    	    <input type="text" class="form-control" name="gradle" placeholder="com.squareup:android-times-square:1.5.0">
+                    	</div>
+                    	<div class="form-group">
                     	    <input type="number" class="form-control" name="min_sdk" placeholder="Minimum SDK Level" min="1" max="20" step="1">
                     	</div>
                     	<div class="form-group">
