@@ -17,6 +17,11 @@
                     <p class="help-block">We can fetch data, like open issues, from GitHub, if you provide a valid GitHub URL.</p>
                 </div>
                 <div class="form-group">
+                    <label for="inputUrl">Gradle</label>
+                    <input type="text" class="form-control" name="inputGradle" id="inputGradle" placeholder="com.squareup:android-times-square:1.5.0">
+                    <p class="help-block">Provide without the compile '' part.</p>
+                </div>
+                <div class="form-group">
                     <label for="inputMinSdk">Minimum SDK Level</label>
                     <input type="number" min="1" max="20" step="1" class="form-control" name="inputMinSdk" id="inputMinSdk" placeholder="12">
                     <p class="help-block">Please provide the minimum SDK level required to use your library.</p>
