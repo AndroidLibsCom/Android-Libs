@@ -9,7 +9,6 @@ init.push(function () {
 
     // Image functions
     suggestImage();
-    setupSubmit();
 
     // Sharing functions
     prepareSharrreButtons();
@@ -299,31 +298,10 @@ function prepareSharrreButtons()
     });
 }
 
-function setupSubmit()
-{
-    var input = $('.inputImage');
-    var img   = $('.add-prev-img');
-    input.on('change', function () {
-        previewImg(this, img);
-    });
-}
-
 
 window.PixelAdmin.start(init);
 
 
-//"private" functions
-function previewImg(input, img) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function () {
-            img.attr('src', reader.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
 
 function setSuggestErrors(setError, message, urlInput, input) {
     if(setError) {

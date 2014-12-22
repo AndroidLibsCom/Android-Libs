@@ -12832,6 +12832,7 @@ $.widget( "ui.tabs", {
     this.onChange();
     $input.on('change', (function(_this) {
       return function() {
+
         return $.proxy(_this.onChange, _this)();
       };
     })(this)).on('click', function(e) {

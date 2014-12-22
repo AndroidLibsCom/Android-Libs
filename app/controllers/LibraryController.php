@@ -164,38 +164,39 @@ class LibraryController extends BaseController
         $sInputTitle          = Input::get('inputTitle');
         $sInputUrl            = Input::get('inputUrl');
         $sInputDesc           = Input::get('inputDesc');
+        $sInputGradle         = Input::get('inputGradle');
         $sInputCat            = Input::get('inputCategory');
         $sInputMinSdk         = Input::get('inputMinSdk');
-        $oInputImage          = Input::file('inputImage');
+        $sInputBaseImage      = Input::get('inputBaseImage');
         $sInputSubmitterEmail = Input::get('inputSubmitterEmail');
         $sImageGuid           = str_random(32);
         $sDisqusId            = str_random(20);
-        $aAcceptedMimes       = ["image/png", "image/jpeg"];
 
-        if(Input::hasFile('inputImage'))
+
+
+/*        $oLibCheck = Libraries::where('url', '=', $sInputUrl)->first();
+        if($oLibCheck != null)
         {
-            $sImageMime           = $oInputImage->getClientMimeType();
-
-            if (!in_array($sImageMime, $aAcceptedMimes)) {
-                return Redirect::to('submit')->with('error', true)->with('message', "We only accept .png as image file format.");
-            }
-        }
-
-        $oLibCheck = Libraries::where('url', '=', $sInputUrl)->first();
-        if($oLibCheck != null) {
             return Redirect::to('submit')->with('error', true)->with('message', 'Thank you for your submission! '
                 . 'The submitted library is already on Android-Libs. Check it out: <a href="' . url('/lib/' . $oLibCheck->slug) . '">' . $oLibCheck->title . '</a>.');
-        }
+        }*/
+
 
         $oLib                  = new Libraries;
         $oLib->title           = $sInputTitle;
         $oLib->url             = $sInputUrl;
+        $oLib->gradle          = $sInputGradle;
         $oLib->disqus          = $sDisqusId;
         $oLib->min_sdk         = $sInputMinSdk;
         $oLib->public          = false;
-        $oLib->img             = json_encode([$sImageGuid]);
         $oLib->submittor_email = $sInputSubmitterEmail;
         $oLib->category_id     = intval($sInputCat);
+
+        if(strlen($sInputBaseImage) > 0)
+        {
+            File::put(public_path() . '/assets/img/libs/' . $sImageGuid . '.png', base64_decode(str_replace('data:image/png;base64,', '', $sInputBaseImage)));
+            $oLib->img = json_encode([$sImageGuid]);
+        }
 
         # Description
         if(Input::has('fetchDesc'))
@@ -212,9 +213,6 @@ class LibraryController extends BaseController
         }
 
         $oLib->save();
-
-
-        $oInputImage->move(public_path() . '/assets/img/libs/', $sImageGuid . '.png');
 
         Mail::send('emails.submitted', [], function ($message) {
             $message->from('submit@android-libs.com', "Android-Libs");

@@ -8,7 +8,7 @@
 			<div class="modal-body">
                 <h4>Credits</h4>
                 <p>
-                    Android-Libs is made by <a href="http://twitter.com/AlexMahrt" target="_blank">Alexander Mahrt</a>.
+                    Android-Libs is created by <a href="http://twitter.com/AlexMahrt" target="_blank">Alexander Mahrt</a>.
                 </p>
                 <hr>
                 <h4>Tools & more</h4>
