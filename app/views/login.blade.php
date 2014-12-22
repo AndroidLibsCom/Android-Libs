@@ -24,9 +24,13 @@
 
 
     <div class="form-actions">
-        <button type="submit" class="btn btn-primary btn-lg btn-block btn-labeled">
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-labeled margin-bottom-20">
             <span class="btn-label icon fa fa-sign-in"></span> Sign in
         </button>
+        <p class="text-muted text-center margin-bottom-20">OR</p>
+        <a href="{{ url('/login/github') }}" class="btn btn-default btn-lg btn-block btn-labeled">
+            <span class="btn-label icon fa fa-github-alt"></span> Sign in with GitHub
+        </a>
     </div> <!-- / .form-actions -->
 </form>
 <!-- / Form -->

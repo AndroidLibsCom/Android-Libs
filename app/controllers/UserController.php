@@ -174,6 +174,70 @@ class UserController extends BaseController {
         }
     }
 
+    public function gitHubAuth()
+    {
+        if(Sentry::check()) {
+            return Redirect::to('/')->with('error', true)->with('message', 'You are already logged in!');
+        }
+
+        // get data from input
+        $code = Input::get( 'code' );
+
+        $GitHubService = OAuth::consumer('GitHub');
+
+        if ( !empty( $code ) ) {
+
+            // This was a callback request from linkedin, get the token
+            $token = $GitHubService->requestAccessToken( $code );
+            // Send a request with it. Please note that XML is the default format.
+            $result = json_decode($GitHubService->request('user'), true);
+
+            if(!empty($token)){
+
+                try{
+                    // Find the user using the user id
+                    $oUser = User::where('email', '=', $result['email'])->orWhere('username', '=', $result['login'])->first();
+                    if($oUser != null)
+                    {
+                        Sentry::login(Sentry::findUserById($oUser->id), false);
+
+                        return Redirect::to('/')->with('success', true)->with('message', 'Welcome back, ' . $oUser->username . '!');
+                    }
+                    else
+                    {
+                        throw new Cartalyst\Sentry\Users\UserNotFoundException;
+                    }
+                }
+                catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+                {
+                    // Register the user
+                    $user = Sentry::register(array(
+                        'email'       => $result['email'],
+                        'username'    => $result['login'],
+                        'password'    => 'github_change',
+                        'github_auth' => true,
+                    ), true);
+
+                    $usergroup = Sentry::getGroupProvider()->findById(2);
+                    $user->addGroup($usergroup);
+
+                    Sentry::login($user, false);
+
+                    return Redirect::to('/')->with('success', true)->with('message', 'Welcome to Android-Libs, ' . $oUser->username . '!');
+                }
+
+            }
+
+        }// if not ask for permission first
+        else {
+            // get linkedinService authorization
+            $url = $GitHubService->getAuthorizationUri();
+
+            // return to linkedin login url
+            return Redirect::to( (string)$url );
+        }
+    }
+
     public function processRegister()
     {
         try

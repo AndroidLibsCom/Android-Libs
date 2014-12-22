@@ -30,9 +30,13 @@
     </div>
 
     <div class="form-actions">
-        <button type="submit" class="btn btn-primary btn-lg btn-block btn-labeled">
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-labeled margin-bottom-20">
             <span class="btn-label icon fa fa-check"></span> Create an account
         </button>
+        <p class="text-muted text-center margin-bottom-20">OR</p>
+        <a href="{{ url('/login/github') }}" class="btn btn-default btn-lg btn-block btn-labeled">
+            <span class="btn-label icon fa fa-github-alt"></span> Sign up with GitHub
+        </a>
     </div>
 </form>
 <!-- / Form -->

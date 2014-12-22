@@ -23,6 +23,7 @@ Route::get('/register', 'UserController@showRegister');
 Route::get('/logout', 'UserController@logout');
 Route::get('/activate/{userId}/{code}', 'UserController@activate');
 Route::post('/login', 'UserController@processLogin');
+Route::get('/login/github', 'UserController@gitHubAuth');
 Route::post('/register', 'UserController@processRegister');
 Route::post('/forgot/password', 'UserController@forgotPassword');
 

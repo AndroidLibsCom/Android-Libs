@@ -129,6 +129,7 @@ return [
         'Roumen\Sitemap\SitemapServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
         'Stolz\Assets\ManagerServiceProvider',
+        'Artdarek\OAuth\OAuthServiceProvider',
     ],
 
     /*
@@ -199,6 +200,7 @@ return [
         'GitHub'            => 'GrahamCampbell\GitHub\Facades\GitHub',
         'Carbon'            => 'Carbon/Carbon',
         'Rss'               => 'Thujohn\Rss\RssFacade',
+        'OAuth'             => 'Artdarek\OAuth\Facade\OAuth',
     ],
 
 ];

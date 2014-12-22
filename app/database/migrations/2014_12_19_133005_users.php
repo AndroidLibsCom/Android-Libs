@@ -15,7 +15,8 @@ class Users extends Migration {
 		Schema::table('users', function(Blueprint $table)
 		{
 			$table->string('username');
-            $table->string('avatar', 32);
+            $table->string('avatar', 32)->nullable();
+            $table->boolean('github_auth');
             $table->boolean('newsletter');
 		});
 	}

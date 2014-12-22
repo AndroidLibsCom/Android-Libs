@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.9 on 2014-12-18.
+ * Generated for Laravel 4.2.9 on 2014-12-22.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12859,6 +12859,207 @@ namespace {
          */
         public static function save($filename){
             return \Thujohn\Rss\Rss::save($filename);
+        }
+        
+    }
+
+
+    class Assets extends \Stolz\Assets\Facades\Assets{
+        
+        /**
+         * Set up configuration options.
+         * 
+         * All the class properties except 'js' and 'css' are accepted here.
+         * Also, an extra option 'autoload' may be passed containing an array of
+         * assets and/or collections that will be automatically added on startup.
+         *
+         * @param array $config Configurable options.
+         * @return \Stolz\Assets\Manager 
+         * @throws Exception
+         * @static 
+         */
+        public static function config($config){
+            return \Stolz\Assets\Manager::config($config);
+        }
+        
+        /**
+         * Add an asset or a collection of assets.
+         * 
+         * It automatically detects the asset type (JavaScript, CSS or collection).
+         * You may add more than one asset passing an array as argument.
+         *
+         * @param mixed $asset
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function add($asset){
+            return \Stolz\Assets\Manager::add($asset);
+        }
+        
+        /**
+         * Add a CSS asset.
+         * 
+         * It checks for duplicates.
+         * You may add more than one asset passing an array as argument.
+         *
+         * @param mixed $asset
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function addCss($asset){
+            return \Stolz\Assets\Manager::addCss($asset);
+        }
+        
+        /**
+         * Add a JavaScript asset.
+         * 
+         * It checks for duplicates.
+         * You may add more than one asset passing an array as argument.
+         *
+         * @param mixed $asset
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function addJs($asset){
+            return \Stolz\Assets\Manager::addJs($asset);
+        }
+        
+        /**
+         * Build the CSS `<link>` tags.
+         * 
+         * Accepts an array of $attributes for the HTML tag.
+         * You can take control of the tag rendering by
+         * providing a closure that will receive an array of assets.
+         *
+         * @param array|\Closure $attributes
+         * @return string 
+         * @static 
+         */
+        public static function css($attributes = null){
+            return \Stolz\Assets\Manager::css($attributes);
+        }
+        
+        /**
+         * Build the JavaScript `<script>` tags.
+         * 
+         * Accepts an array of $attributes for the HTML tag.
+         * You can take control of the tag rendering by
+         * providing a closure that will receive an array of assets.
+         *
+         * @param array|\Closure $attributes
+         * @return string 
+         * @static 
+         */
+        public static function js($attributes = null){
+            return \Stolz\Assets\Manager::js($attributes);
+        }
+        
+        /**
+         * Add/replace collection.
+         *
+         * @param string $collectionName
+         * @param array $assets
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function registerCollection($collectionName, $assets){
+            return \Stolz\Assets\Manager::registerCollection($collectionName, $assets);
+        }
+        
+        /**
+         * Reset all assets.
+         *
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function reset(){
+            return \Stolz\Assets\Manager::reset();
+        }
+        
+        /**
+         * Reset CSS assets.
+         *
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function resetCss(){
+            return \Stolz\Assets\Manager::resetCss();
+        }
+        
+        /**
+         * Reset JavaScript assets.
+         *
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function resetJs(){
+            return \Stolz\Assets\Manager::resetJs();
+        }
+        
+        /**
+         * Build an HTML attribute string from an array.
+         *
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function buildTagAttributes($attributes){
+            return \Stolz\Assets\Manager::buildTagAttributes($attributes);
+        }
+        
+        /**
+         * Get all CSS assets already added.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getCss(){
+            return \Stolz\Assets\Manager::getCss();
+        }
+        
+        /**
+         * Get all JavaScript assets already added.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getJs(){
+            return \Stolz\Assets\Manager::getJs();
+        }
+        
+        /**
+         * Add all assets matching $pattern within $directory.
+         *
+         * @param string $directory Relative to $this->public_dir
+         * @param string $pattern (regex)
+         * @return \Stolz\Assets\Manager 
+         * @throws Exception
+         * @static 
+         */
+        public static function addDir($directory, $pattern = null){
+            return \Stolz\Assets\Manager::addDir($directory, $pattern);
+        }
+        
+        /**
+         * Add all CSS assets within $directory (relative to public dir).
+         *
+         * @param string $directory Relative to $this->public_dir
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function addDirCss($directory){
+            return \Stolz\Assets\Manager::addDirCss($directory);
+        }
+        
+        /**
+         * Add all JavaScript assets within $directory.
+         *
+         * @param string $directory Relative to $this->public_dir
+         * @return \Stolz\Assets\Manager 
+         * @static 
+         */
+        public static function addDirJs($directory){
+            return \Stolz\Assets\Manager::addDirJs($directory);
         }
         
     }

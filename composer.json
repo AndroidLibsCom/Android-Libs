@@ -12,7 +12,8 @@
         "cviebrock/eloquent-sluggable": "2.*",
 		"roumen/sitemap": "~2.4@dev",
 		"thujohn/rss": "dev-master",
-		"stolz/assets": "dev-master"
+		"stolz/assets": "dev-master",
+		"artdarek/oauth-4-laravel": "1.0.5"
 	},
 	"autoload": {
 		"classmap": [
@@ -31,6 +32,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
+            "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
