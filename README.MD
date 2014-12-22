@@ -1,6 +1,7 @@
 Android-Libs
 ============
-[![License](http://img.shields.io/badge/license-GPL--2.0-green.svg)](http://choosealicense.com/licenses/gpl-2.0/)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Cyruxx/Android-Libs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![License](https://img.shields.io/badge/License-GPL%202.0-green.svg?style=flat-square)](http://choosealicense.com/licenses/gpl-2.0/)
 
 Android-Libs is a portal with hundreds of android libraries and tools for developers.
 

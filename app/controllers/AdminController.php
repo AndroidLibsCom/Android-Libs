@@ -87,6 +87,7 @@ class AdminController extends BaseController {
         $sInputUrl            = Input::get('url');
         $sInputDesc           = Input::get('description');
         $sInputCat            = Input::get('category');
+        $sInputGradle         = Input::get('gradle');
         $sInputMinSdk         = Input::get('min_sdk');
         $oInputImage          = Input::file('img');
         $sInputSubmitterEmail = Sentry::getUser()->email;
@@ -105,6 +106,7 @@ class AdminController extends BaseController {
                 $oLib->url             = $sInputUrl;
                 $oLib->description     = $sInputDesc;
                 $oLib->disqus          = $sDisqusId;
+                $oLib->gradle          = $sInputGradle;
                 $oLib->min_sdk         = $sInputMinSdk;
                 $oLib->public          = false;
                 $oLib->img             = json_encode([$sImageGuid]);

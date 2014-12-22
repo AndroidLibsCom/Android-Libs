@@ -29,6 +29,11 @@ class Libraries extends Eloquent implements SluggableInterface {
         return stripos($this->url, 'github.com') == false ? false : true;
     }
 
+    public function hasGradle()
+    {
+        return $this->gradle != null;
+    }
+
     public function getGitHubUserName()
     {
         $sStrippedUrl = str_replace('http://github.com/', '', $this->url);
