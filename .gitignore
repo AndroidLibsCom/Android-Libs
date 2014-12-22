@@ -1,3 +1,5 @@
 /vendor
 /.idea
 /app/config/database.php
+/public/assets/img/libs
+/public/assets/img/avatars
