@@ -18,7 +18,7 @@
                 <!-- "Create project" button, width=auto on desktops -->
                 <div class="pull-right col-xs-12 col-sm-auto">
 
-                    @if($oLib->isGitHubUrl())
+                    @if($oLib->githubOk)
                     <a href="{{ $oLib->url }}" class="btn btn-default btn-labeled" target="_blank">
                         <span class="btn-label icon fa fa-github"></span> To GitHub website
                     </a>
@@ -61,7 +61,7 @@
                     <hr>
                     <div class="row margin-bottom-10">
                         <div class="col-xs-12">
-                            @if($oLib->isGitHubUrl())
+                            @if($oLib->githubOk)
                             <a href="{{ $oLib->url }}" class="btn btn-primary btn-block btn-labeled" target="_blank">
                                 <span class="btn-label icon fa fa-github"></span> To GitHub website
                             </a>
@@ -207,7 +207,7 @@
                     </tr>
                 </table>
             </div> <!-- / .panel-body -->
-            @if(!$oLib->isGitHubUrl())
+            @if(!$oLib->githubOk)
                 <div class="panel-footer btn-footer">
                     <a href="{{ $oLib->url }}" target="_blank" class="btn btn-block btn-primary btn-full"><i class="fa fa-fw fa-globe"></i> Website</a>
                 </div>
@@ -238,7 +238,7 @@
                 <span class="panel-title"><i class="panel-title-icon fa fa-github-square"></i> GitHub Details</span>
             </div> <!-- / .panel-heading -->
             <div class="panel-body padding-sm">
-                @if($oLib->isGitHubUrl())
+                @if($oLib->githubOk)
                     <table class="table">
 
                             @if($oLib->githubOk)
@@ -284,9 +284,9 @@
                     </div>
                 @endif
             </div> <!-- / .panel-body -->
-            @if($oLib->isGitHubUrl())
+            @if($oLib->githubOk)
                 <div class="panel-footer btn-footer">
-                    <a href="{{ $oGitHub->html_url }}" target="_blank" class="btn btn-block btn-primary btn-full"><i class="fa fa-fw fa-github"></i> GitHub Site</a>
+                    <a href="{{ $oLib->url }}" target="_blank" class="btn btn-block btn-primary btn-full"><i class="fa fa-fw fa-github"></i> GitHub Site</a>
                 </div>
             @endif
         </div>
@@ -295,7 +295,7 @@
                 <span class="panel-title"><i class="panel-title-icon fa fa-github-square"></i> GitHub Contributors</span>
             </div> <!-- / .panel-heading -->
             <div class="panel-body padding-sm">
-                @if($oLib->isGitHubUrl())
+                @if($oLib->githubOk)
                     @foreach($aContributors as $aContributor)
                     <a href="{{ $aContributor['html_url'] }}" target="_blank" data-toggle="tooltip" class="thumbnail contr-thumb" data-title="{{ $aContributor['login'] . ' (' . $aContributor['contributions'] . ' commits)' }}">
                         <img src="{{ $aContributor['avatar_url'] }}" alt="{{ $aContributor['login'] }}">
