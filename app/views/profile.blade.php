@@ -98,7 +98,7 @@
                         	<legend>Update your profile settings</legend>
 
                             <div class="form-group">
-                                <label for="avatar">Image</label>
+                                <label for="avatar">Avatar</label>
                                 <input type="file" class="form-control" name="avatar" id="avatar" accept="image/png">
                                 <span class="help-block">We only accept .PNG files.</span>
                             </div>
@@ -106,7 +106,7 @@
                         	<div class="form-group">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="remove_avatar" class="px" id="remove_avatar" value="true">
-                                    <span class="lbl">Remove the current avatar</span>
+                                    <span class="lbl text-danger">Remove my avatar</span>
                                 </label>
                         	</div>
 

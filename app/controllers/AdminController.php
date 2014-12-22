@@ -159,12 +159,24 @@ class AdminController extends BaseController {
         $oLib->public = true;
         $oLib->save();
 
-        Mail::send('emails.accepted', [], function($message)
+        $oRelatedUser = User::where('email', '=', $oLib->submittor_email)->first();
+        $bSendEmails = true;
+        # Check if user wants email notifications
+        if($oRelatedUser != null)
         {
-            $oLib = Libraries::find(Session::get('LibraryId'));
-            $message->from('submit@android-libs.com', "Android-Libs");
-            $message->to($oLib->submittor_email, 'AndroidLibs Submitter')->subject("Your AndroidLibs library '" . $oLib->title . "' has been accepted");
-        });
+            $bSendEmails = $oRelatedUser->newsletter;
+        }
+
+        if($bSendEmails)
+        {
+            Mail::send('emails.accepted', [], function($message)
+            {
+                $oLib = Libraries::find(Session::get('LibraryId'));
+                $message->from('submit@android-libs.com', "Android-Libs");
+                $message->to($oLib->submittor_email, 'AndroidLibs Submitter')->subject("Your AndroidLibs library '" . $oLib->title . "' has been accepted");
+            });
+        }
+
 
         return Redirect::to('admin#submitted-libs')->with('success', true)->with('message', "Library was successfully accepted!");
     }
@@ -183,12 +195,22 @@ class AdminController extends BaseController {
             File::delete(public_path() . '/assets/img/libs/' . $sImage . '.png');
         }
 
-        Mail::send('emails.declined', [ "reason" => $reason], function($message)
+        $oRelatedUser = User::where('email', '=', $oLib->submittor_email)->first();
+        $bSendEmails = true;
+        # Check if user wants email notifications
+        if($oRelatedUser != null)
         {
-            $oLib       = Libraries::find(Session::get('LibraryId'));
-            $message->from('submit@android-libs.com', "Android-Libs");
-            $message->to($oLib->submittor_email, 'AndroidLibs Submitter')->subject("Your AndroidLibs library '" . $oLib->title . "' was declined");
-        });
+            $bSendEmails = $oRelatedUser->newsletter;
+        }
+
+        if($bSendEmails)
+        {
+            Mail::send('emails.declined', ["reason" => $reason], function ($message) {
+                $oLib = Libraries::find(Session::get('LibraryId'));
+                $message->from('submit@android-libs.com', "Android-Libs");
+                $message->to($oLib->submittor_email, 'AndroidLibs Submitter')->subject("Your AndroidLibs library '" . $oLib->title . "' was declined");
+            });
+        }
 
         $oLib->delete();
         return Redirect::to('admin#submitted-libs')->with('success', true)->with('message', "Library was successfully declined!");
