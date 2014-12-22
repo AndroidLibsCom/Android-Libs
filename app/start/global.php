@@ -93,6 +93,7 @@ Assets::add([
     'assets/css/pixeladmin/themes.min.css',
     'assets/css/pixeladmin/pages.min.css',
     'assets/css/animate.min.css',
+    'assets/css/cropper.min.css',
     '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css',
     'assets/css/chosen.min.css',
     'assets/css/chosen.bootstrap.min.css',
@@ -112,5 +113,6 @@ Assets::add([
     'assets/js/sharrre.min.js',
     'assets/js/pixel-admin.min.js',
     'assets/js/lightbox.min.js',
+    'assets/js/cropper.min.js',
     'assets/js/app.min.js'
 ]);

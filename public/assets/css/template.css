@@ -376,3 +376,7 @@ textarea {
 .max-width {
     width: 100%;
 }
+
+.img-container {
+    height: 360px;
+}

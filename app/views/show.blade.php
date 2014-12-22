@@ -213,6 +213,24 @@
                 </div>
             @endif
         </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title"><i class="fa panel-title-icon fa-android"></i> Gradle</span>
+            </div>
+            <div class="panel-body">
+                @if($oLib->hasGradle())
+                <div class="input-group">
+                    <input type="text" class="form-control input-gradle" value="compile '{{ $oLib->gradle }}'" readonly>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-gradle"
+                            data-toggle="tooltip" data-title="Click to select inputs content"><i class="fa fa-fw fa-clipboard"></i></button>
+                    </div>
+                </div>
+                @else
+                <p class="text-center">We do not have any information about gradle support.</p>
+                @endif
+            </div>
+        </div>
     </div>
     <div class="col-xs-12 col-md-4">
         <div class="panel">
@@ -322,6 +340,23 @@
 
 <script>
     init.push(function() {
+        var SELECT_TIMEOUT = null;
+        var inputGradle = $('.input-gradle');
+        $('.btn-gradle').click(function(e) {
+            e.preventDefault();
+            inputGradle.tooltip('destroy').tooltip({
+                placement: 'top',
+                trigger: 'manual',
+                title: 'Now press CTRL + C to copy to clipboard'
+            }).tooltip('show');
+            inputGradle.select();
+
+            window.clearTimeout(SELECT_TIMEOUT);
+            SELECT_TIMEOUT = window.setTimeout(function() {
+                inputGradle.tooltip('hide');
+            }, 5000);
+        });
+
         $('.submittor').popover({
             placement: 'auto',
             html: true,

@@ -18,6 +18,7 @@ class CreateLibrariesTable extends Migration {
             $table->string('title', 255)->nullable();
             $table->string('slug', 255)->nullable();
             $table->string('disqus', 20)->nullable();
+            $table->string('gradle', 255)->nullable();
             $table->text('img')->nullable();
             $table->text('description')->nullable();
             $table->string('submittor_email', 255)->nullable();
