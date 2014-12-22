@@ -18,6 +18,10 @@ I have used several packages. Please install them and follow their installation 
 * [Cartalyst Sentry] (https://cartalyst.com/manual/sentry)
 * [Laravel GitHub] (https://github.com/GrahamCampbell/Laravel-GitHub)
 * [Eloquent Sluggable] (https://github.com/cviebrock/eloquent-sluggable)
+* [Laravel Sitemap](https://github.com/RoumenDamianoff/laravel-sitemap)
+* [Laravel RSS](https://github.com/thujohn/rss-l4)
+* [Laravel Assets](https://github.com/Stolz/Assets)
+* [OAuth for Laravel](https://github.com/artdarek/oauth-4-laravel)
 * The initial library list used contents of the [Android Arsenal] (http://android-arsenal.com) Thanks for that!
 
 
