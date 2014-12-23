@@ -213,11 +213,20 @@ class LibraryController extends BaseController
         }
 
         $oLib->save();
+        $oRelatedUser = User::where('email', '=', $oLib->submittor_email)->first();
+        $bSendEmails = true;
+        # Check if user wants email notifications
+        if($oRelatedUser != null)
+        {
+            $bSendEmails = $oRelatedUser->newsletter;
+        }
 
-        Mail::send('emails.submitted', [], function ($message) {
-            $message->from('submit@android-libs.com', "Android-Libs");
-            $message->to(Input::get('inputSubmitterEmail'), 'AndroidLibs Submitter')->subject("Your AndroidLibs library has been submitted");
-        });
+        if($bSendEmails) {
+            Mail::send('emails.submitted', [], function ($message) {
+                $message->from('submit@android-libs.com', "Android-Libs");
+                $message->to(Input::get('inputSubmitterEmail'), 'AndroidLibs Submitter')->subject("Your AndroidLibs library has been submitted");
+            });
+        }
 
         return Redirect::to('submit')->with('success', true)->with('message', "You have successfully submitted a library. Thank you! :)");
     }
