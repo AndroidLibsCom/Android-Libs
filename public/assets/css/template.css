@@ -1,0 +1,382 @@
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #f7f7f7;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-top: 70px;
+    padding: 0 15px 0 15px;
+}
+
+.navigation {
+    border-radius: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+.lib-item-list {
+    position: relative;
+}
+
+.lib-item-show {
+    position: relative;
+    left: -2000px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+}
+
+
+.error-row .col-md-12 {
+    padding: 50px;
+}
+
+.search-row i {
+    margin-bottom: 20px;
+}
+
+
+.lib-panel img {
+    width: 100%;
+    background-color: transparent;
+}
+
+
+.row-lib {
+    height: 200px;
+}
+
+.lib-img {
+    width: 200px;
+}
+
+.lib-container {
+    margin: 0 15px 0 15px;
+    height: 100%;
+    background: #ffffff;
+}
+
+.lib-col-left {
+    height: 100%;
+    width: 17.09%;
+    float: left;
+}
+
+.lib-col-right {
+    height: 100%;
+    width: 82.91%;
+    float: right;
+    text-align: left;
+}
+
+.rate {
+    font-size: 12pt;
+}
+
+.rate:hover {
+    cursor: default;
+}
+
+.lib-title {
+    width: 100%;
+    height: 20%;
+    background-color: #FFFFFF;
+    font-size: 17px;
+    padding: 10px 20px 0 20px;
+}
+
+
+.lib-description {
+    clear: both;
+    width: 100%;
+    height: 60%;
+    font-size: 13px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-footer {
+    height: 20%;
+    width: 100%;
+    padding: 0 20px 0 20px;
+}
+
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.table-with-actions th,
+.table-with-actions td {
+    text-align: center;
+}
+
+.table-with-actions td:last-child {
+    width: 15%;
+}
+.add-lib-form {
+    margin-bottom: 40px;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header,
+.lib-panel .lib-row.lib-show-header {
+    background-color: #FFFFFF;
+    font-size: 17px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-header-seperator,
+.lib-panel .lib-row.lib-show-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc,
+.lib-panel .lib-row.lib-show-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a,
+.lib-panel .lib-row.lib-show-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.lib-panel .show-loading {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
+.lib-panel .show-loading .progress {
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    height: 20px;
+    left: 50%;
+    margin-left: -38%;
+}
+
+
+.load-more-row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@-webkit-keyframes pulse-color {
+    0% {
+        color: #b4bcc2;
+    }
+    50% {
+        color: #57595b;
+    }
+    100% {
+        color: #b4bcc2;
+    }
+}
+
+.td-img {
+    border: #777777 1px solid;
+    width: 75px;
+}
+
+/* New Design */
+.box {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-bottom: 15px;
+}
+
+
+.loading-box {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.box > .box-head {
+    display: block;
+    border-bottom: 1px solid #dadada;
+    padding: 15px;
+    margin: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.box > .box-inner {
+    border-bottom: 1px solid #dadada;
+    margin: 0;
+}
+
+.box > .box-inner > .list-group {
+    margin-bottom: 0;
+}
+
+.box > .box-inner > .list-group > .list-group-item:first-child {
+    border-top: none;
+}
+
+.box > .box-inner > .list-group > .list-group-item {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.box > .box-inner input,
+.box > .box-inner select,
+.box > .box-inner .select2-default,
+.box > .box-inner .chosen-single {
+    border-radius: 0 !important;
+    border: none !important;
+}
+.box > .box-inner .select2-choice,
+.box > .box-inner .chosen-single:focus {
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+
+}
+
+.box > .box-inner .input-group-btn button {
+    border: none;
+}
+
+.lib-row .box {
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+.lib-row img {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+.lib-row .box-lib-title {
+    display: block;
+    border-bottom: 1px solid #dadada;
+    border-top: 1px solid #dadada;
+    padding: 14px;
+}
+
+.lib-row .box-lib-title a,
+.lib-row .box-lib-title a:hover,
+.lib-row .box-lib-title a:focus,
+.lib-row .box-lib-title a:visited,
+.lib-row .box-lib-title a:active {
+    color: #000000;
+    font-size: 14px;
+}
+
+.lib-row .box-lib-desc {
+    padding: 10px;
+    border-bottom: 1px solid #dadada;
+    color: #555555;
+    margin-top: 7px;
+}
+
+.lib-row .box-lib-desc:hover,
+.lib-row .box-lib-desc:visited,
+.lib-row .box-lib-desc:active,
+.lib-row .box-lib-desc:focus {
+    color: #414141;
+}
+
+.lib-row .stat-cell.hoverable {
+    -webkit-transition: background .2s ease;
+    -moz-transition: background .2s ease;
+    -ms-transition: background .2s ease;
+    -o-transition: background .2s ease;
+    transition: background .2s ease;
+}
+
+.hoverable:hover {
+    background: #fcfcfc;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.navbar-brand div {
+    background: transparent !important;
+}
+
+.panel-footer.btn-footer {
+    padding: 0;
+}
+
+.panel-footer .btn-full {
+    border-radius: 0 !important;
+}
+
+.panel-description {
+    line-height: 1.55;
+}
+
+/* Hide original share buttons */
+.sharrre .buttons {
+    display: none;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.contr-thumb {
+    width: 50px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.pagination {
+    margin: 18px;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.img-container {
+    height: 360px;
+}

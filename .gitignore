@@ -1,0 +1,8 @@
+/vendor
+/.idea
+/app/config/database.php
+/public/assets/img/libs
+/public/assets/img/avatars
+www_android-libs_com.key
+www_android-libs_com.chained.crt
+www_android-libs_com.csr

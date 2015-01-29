@@ -1,0 +1,9 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.email-icon i {
+    width: 100%;
+    font-size: 10em;
+}
