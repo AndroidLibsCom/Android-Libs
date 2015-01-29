@@ -65,7 +65,7 @@
 <div id="main-wrapper">
 
 
-    <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+    {{--<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
     <!-- Main menu toggle -->
     <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span>
     </button>
@@ -206,14 +206,14 @@
                                 * 'nav-icon-btn-danger'
     -->
     <!-- /3. $END_NAVBAR_ICON_BUTTONS -->
-    {{--
+    --}}{{--
 
     <li>
         <form class="navbar-form search-libs-form pull-left">
             <input type="text" class="form-control" placeholder="Search">
         </form>
     </li>
-    --}}
+    --}}{{--
 
 
 
@@ -226,11 +226,122 @@
     <!-- / #main-navbar-collapse -->
     </div>
     <!-- / .navbar-inner -->
-    </div>
+    </div>--}}
 
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 text-header visible-xs">
+                    <div class="row visible-xs">
+                        <div class="col-xs-3 dropdown">
+                            <button class="btn btn-link navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ajobs-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-9 padding-top-6">
+                            <h1>
+                                <a href="{{ url('/', [], true) }}" class="header-title">
+                                    Android<span class="text-bold">Libs</span>
+                                </a>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 text-header hidden-xs">
+                    <h1>
+                        <a href="{{ url('/', [], true) }}" class="header-title">
+                            Android<span class="text-bold">Libs</span>
+                        </a>
+                    </h1>
+                    <h2>Your portal for android libraries and tools</h2>
+                </div>
+                <div class="hidden-xs col-sm-9">
+                    <nav>
+                        <ul class="list-inline text-right">
+                            <li><a href="{{ url('/', [], true) }}">Home</a></li>
+                            <li><a href="{{ url('/about', [], true) }}">About</a></li>
+                            <li><a href="{{ url('/featured', [], true) }}">Featured</a></li>
+                            {{--<li><a href="{{ url('/blog') }}">Blog</a></li>--}}
+                            @if(Sentry::check())
+                                <li class="dropdown dropdown-nav">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Sentry::getUser()->username }}</a>
+                                    <ul class="dropdown-menu text-left">
+                                        <li><a href="{{ url('/user/profile', [], true) }}"><i class="fa fa-fw fa-cog"></i> Profile / Settings</a></li>
+                                        <li><a href="{{ url('/logout', [], true) }}"><i class="fa fa-fw fa-power-off"></i> Sign out</a></li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li><a href="{{ url('/login', [], true) }}">Sign in</a></li>
+                            @endif
+                            <li><a href="{{ url('/rss', [], true) }}" target="_blank">RSS</a></li>
+                            <li class="dropdown dropdown-nav">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Social</a>
+                                <ul class="dropdown-menu text-left">
+                                    <li><a href="https://twitter.com/Android_Libs" target="_blank"><i
+                                                    class="fa fa-fw fa-twitter"></i> @Android_Libs</a></li>
+                                    <li><a href="https://twitter.com/AlexMahrt" target="_blank"><i
+                                                    class="fa fa-fw fa-twitter"></i> @AlexMahrt</a></li>
+                                    <li><a href="https://lk.linkedin.com/in/chathurawijesinghe" target="_blank"><i
+                                                    class="fa fa-fw fa-linkedin"></i> Chathura</a></li>
+                                    <li><a href="https://gitter.im/AndroidLibsCom/Android-Libs" target="_blank"><i
+                                                    class="fa fa-fw fa-comments"></i> Gitter</a></li>
+                                    <li><a href="https://github.com/AndroidLibsCom/Android-Libs" target="_blank"><i
+                                                    class="fa fa-fw fa-github"></i> GitHub</a></li>
+                                    <li><a href="https://gratipay.com/cyruxx" target="_blank"><i
+                                                    class="fa fa-fw fa-heart"></i> Gratipay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url('/submit', [], true) }}" class="btn-submit">Submit Library</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-collapse navbar-ajobs-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('/', [], true) }}"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a href="{{ url('/about', [], true) }}"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+                {{--<li><a href="{{ url('/blog') }}">Blog</a></li>--}}
+                @if(Sentry::check())
+                    <li class="dropdown dropdown-nav">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
+                                    class="fa fa-fw fa-user"></i> {{ Sentry::getUser()->username }}</a>
+                        <ul class="dropdown-menu text-left">
+                            <li><a href="{{ url('/user/profile', [], true) }}"><i class="fa fa-fw fa-cog"></i> Profile / Settings</a></li>
+                            <li><a href="{{ url('/logout', [], true) }}"><i class="fa fa-fw fa-power-off"></i> Sign out</a></li>
+                        </ul>
+                    </li>
+                @else
+                    <li><a href="{{ url('/login', [], true) }}"><i class="fa fa-fw fa-sign-in"></i>Sign in</a></li>
+                @endif
+                <li><a href="{{ url('/rss', [], true) }}" target="_blank"><i class="fa fa-fw fa-rss"></i>RSS</a></li>
+                <li class="dropdown dropdown-nav">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
+                                class="fa fa-fw fa-users"></i> Social</a>
+                    <ul class="dropdown-menu text-left">
+                        <li><a href="https://twitter.com/Android_Libs" target="_blank"><i
+                                        class="fa fa-fw fa-twitter"></i> @Android_Libs</a></li>
+                        <li><a href="https://twitter.com/AlexMahrt" target="_blank"><i
+                                        class="fa fa-fw fa-twitter"></i> @AlexMahrt</a></li>
+                        <li><a href="https://lk.linkedin.com/in/chathurawijesinghe" target="_blank"><i
+                                        class="fa fa-fw fa-linkedin"></i> Chathura</a></li>
+                        <li><a href="https://gitter.im/AndroidLibsCom/Android-Libs" target="_blank"><i
+                                        class="fa fa-fw fa-comments"></i> Gitter</a></li>
+                        <li><a href="https://github.com/AndroidLibsCom/Android-Libs" target="_blank"><i
+                                        class="fa fa-fw fa-github"></i> GitHub</a></li>
+                        <li><a href="https://gratipay.com/cyruxx" target="_blank"><i
+                                        class="fa fa-fw fa-heart"></i> Gratipay</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url('/submit', [], true) }}"><i class="fa fa-fw fa-envelope"></i> Submit Library</a></li>
+            </ul>
+        </div>
+    </header>
 
-    @include('alerts')
-    @yield('content')
+    <main>
+        @include('alerts')
+        @yield('content')
+    </main>
     @include('modals.global')
 </div>
 

@@ -71,6 +71,13 @@ class IndexController extends BaseController {
     }
 
     /*
+     * Shows the about us page
+     */
+    public function showAbout()
+    {
+        return View::make('about', $this->data);
+    }
+    /*
      * Prepare libraries
      */
     public static function prepareLibrary($aLibs, $iIndex = 0)

@@ -3,8 +3,6 @@ body {
     background-color: #f7f7f7;
     overflow-x: hidden;
     overflow-y: scroll;
-    margin-top: 70px;
-    padding: 0 15px 0 15px;
 }
 
 .navigation {
@@ -379,4 +377,189 @@ textarea {
 
 .img-container {
     height: 360px;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    border-bottom: 1px solid #f4f2f0;
+    background: #27ae60;
+    -webkit-box-shadow:inset 0 -8px 0 -5px rgba(0,0,0,.1);
+    box-shadow:inset 0 -8px 0 -5px rgba(0,0,0,.1);
+    color: #fff;
+    text-align: center;
+    padding: 1em 1em;
+
+}
+
+@media only screen and (min-width: 40em) {
+    header {
+        text-align: left;
+        padding: 2.5em 1em;
+        margin-bottom: 3em;
+    }
+}
+
+@media only screen and (max-width: 40em) {
+    header {
+        margin-bottom: 1em;
+    }
+}
+
+header img {
+    width: 142px;
+    height: 49px;
+}
+
+header nav {
+    padding-top: 15px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header nav > ul > li > a {
+    color: rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 10px 15px;
+    border-radius: 4px;
+
+    -webkit-transition: all .15s ease-in;
+    -moz-transition: all .15s ease-in;
+    -ms-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
+    transition: all .15s ease-in;
+}
+
+header nav > ul > li > a:hover,
+header nav > ul > li > a:focus,
+header nav > ul > li > a:active {
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+}
+
+header nav a.btn-submit {
+    background: #ffffff;
+    color: #27ae60;
+}
+
+header .navbar-toggle {
+    color: #ffffff;
+    font-size: 16pt;
+    float: none;
+    position: relative;
+    margin: 0;
+    background: #27ae60;
+    border: 0;
+}
+
+header .navbar-toggle:hover,
+header .navbar-toggle:focus,
+header .navbar-toggle:active {
+    color: #ffffff;
+    background: #27ae60 !important;
+    border: 0;
+}
+
+header .navbar-ajobs-collapse {
+    text-align: left;
+}
+
+header .navbar-ajobs-collapse a {
+    color: #ffffff;
+}
+
+header .navbar-ajobs-collapse a:hover,
+header .navbar-ajobs-collapse a:focus,
+header .navbar-ajobs-collapse a:active {
+    background-color: #1a7440;
+}
+
+header .navbar-ajobs-collapse li:not(:last-child) {
+    border-bottom: 1px solid rgba(60, 182, 111, 0.99);
+}
+
+.nav .open>a {
+    background: #1a7440 !important;
+}
+
+/* Hide navbar on big screens */
+@media (min-width: 768px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        padding-bottom: 0;
+        overflow: hidden !important;
+    }
+}
+
+.dropdown {
+    text-align: left;
+}
+
+header .dropdown-menu > li > a {
+    padding: 6px 20px;
+    text-align: left;
+}
+
+header .dropdown:not(header .dropdown.dropdown-nav) {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    top: -0.05em;
+}
+
+
+header .dropdown.dropdown-nav a {
+
+}
+
+header nav a.btn-submit:hover,
+header nav a.btn-submit:focus,
+header nav a.btn-submit:active {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+.text-header {
+    font-size: 2.4em;
+}
+
+
+.text-header .header-title,
+.text-header .header-title:focus,
+.text-header .header-title:hover,
+.text-header .header-title:active,
+.text-header .header-title:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.text-header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.text-header h2 {
+    font-size: .4em;
+    margin: 0;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+main {
+    padding: 0 15px 0 15px;
+}
+
+.padding-top-6 {
+    padding-top: 6px;
 }

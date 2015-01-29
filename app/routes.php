@@ -16,7 +16,7 @@ Route::get('/', 'IndexController@showIndex');
 Route::get('/index/{lastIndex}', 'IndexController@getIndexLibraries');
 Route::get('/featured', 'IndexController@showFeatured');
 Route::get('/lib/{slug}', 'LibraryController@showLibrary');
-
+Route::get('/about', 'IndexController@showAbout');
 # SEO
 Route::get('/tags/{d}/{c}', function() {
     return Redirect::to('/');
