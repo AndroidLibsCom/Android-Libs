@@ -273,8 +273,8 @@
                             @else
                                 <li><a href="{{ url('/login', [], true) }}">Sign in</a></li>
                             @endif
-                            <li><a href="{{ url('/rss', [], true) }}" target="_blank">RSS</a></li>
-                            <li class="dropdown dropdown-nav">
+                            <li class="hidden-sm"><a href="{{ url('/rss', [], true) }}" target="_blank">RSS</a></li>
+                            <li class="dropdown dropdown-nav hidden-sm">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Social</a>
                                 <ul class="dropdown-menu text-left">
                                     <li><a href="https://twitter.com/Android_Libs" target="_blank"><i

@@ -140,19 +140,18 @@
     </div>
 
 </div>
-
 <div class="row">
-    <div class="col-xs-12 col-md-4">
+	<div class="col-xs-12 col-md-8">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title"><i class="panel-title-icon fa fa-file-text-o"></i> Description</span>
+            </div> <!-- / .panel-heading -->
+            <div class="panel-body padding-sm panel-description">
+                {{ $oLib->description }}
+            </div> <!-- / .panel-body -->
+        </div>
         <div class="row">
-            <div class="col-xs-12">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <span class="panel-title"><i class="panel-title-icon fa fa-adn"></i> Ads</span>
-                    </div>
-                    <div class="panel-body padding-sm">
-                        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=androidlibscom" id="_carbonads_js"></script>
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-6">
                 <div class="panel">
                     <div class="panel-heading">
                         <span class="panel-title"><i class="panel-title-icon fa fa-image"></i> Images</span>
@@ -172,91 +171,82 @@
                         @endif
                     </div> <!-- / .panel-body -->
                 </div>
-            </div>
-            <div class="col-xs-12">
                 <div class="panel">
                     <div class="panel-heading">
-                        <span class="panel-title"><i class="panel-title-icon fa fa-file-text-o"></i> Description</span>
-                    </div> <!-- / .panel-heading -->
-                    <div class="panel-body padding-sm panel-description">
-                        {{ $oLib->description }}
-                    </div> <!-- / .panel-body -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-        <div class="panel">
-            <div class="panel-heading">
-                <span class="panel-title"><i class="panel-title-icon fa fa-info"></i>Details</span>
-            </div> <!-- / .panel-heading -->
-            <div class="panel-body padding-sm">
-                <table class="table">
-                    <tr>
-                        <th class="no-border-t"><i class="fa fa-fw fa-calendar"></i> Added at:</th>
-                        <td class="no-border-t">{{ $oLib->getCreatedDate() }}</td>
-                    </tr>
-                    <tr>
-                        <th><i class="fa fa-fw fa-user"></i> Submitted by:</th>
-                        @if($oSubmittor != null)
-                        <td>
-                            <a href="{{ url('/user/' . $oSubmittor->username, [], true) }}" class="submittor"
-                            data-content="<img src='{{ $oSubmittor->getAvatar() }}' alt='{{ $oSubmittor->username }}' class='img-responsive'>">{{ $oSubmittor->username }}</a>
-                        </td>
+                        <span class="panel-title"><i class="fa panel-title-icon fa-android"></i> Gradle</span>
+                    </div>
+                    <div class="panel-body">
+                        @if($oLib->hasGradle())
+                            <div class="input-group">
+                                <input type="text" class="form-control input-gradle" value="compile '{{ $oLib->gradle }}'" readonly>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-gradle"
+                                            data-toggle="tooltip" data-title="Click to select inputs content"><i class="fa fa-fw fa-clipboard"></i></button>
+                                </div>
+                            </div>
                         @else
-                        <td>
-                            Anonymous
-                        </td>
+                            <p class="text-center">We do not have any information about gradle support.</p>
                         @endif
-                    </tr>
-                    <tr>
-                        <th><i class="fa fa-fw fa-level-up"></i> Minimum SDK Level:</th>
-                        <td>{{ $oLib->getApiLevel() }}</td>
-                    </tr>
-                    <tr>
-                        <th><i class="fa fa-fw fa-tag"></i> Category:</th>
-                        <td><a href="{{ url('/search/' . $oLib->categories->slug, [], true) }}">{{ $oLib->categories->name }}</a></td>
-                    </tr>
-                    <tr>
-                        <th><i class="fa fa-fw fa-thumbs-up"></i> Likes:</th>
-                        <td>{{ $oLib->likes->count() }}</td>
-                    </tr>
-                    <tr>
-                        <th><i class="fa fa-fw fa-check"></i> See also:</th>
-                        <td>
-                            @foreach($oFiveRandomLibs as $oRandLib)
-                                <a href="{{ url('/lib/' . $oRandLib->slug, [], true) }}">{{ $oRandLib->title }}</a><br>
-                            @endforeach
-                        </td>
-                    </tr>
-                </table>
-            </div> <!-- / .panel-body -->
-            @if(!$oLib->githubOk)
-                <div class="panel-footer btn-footer">
-                    <a href="{{ $oLib->url }}" target="_blank" class="btn btn-block btn-primary btn-full"><i class="fa fa-fw fa-globe"></i> Website</a>
-                </div>
-            @endif
-        </div>
-        <div class="panel">
-            <div class="panel-heading">
-                <span class="panel-title"><i class="fa panel-title-icon fa-android"></i> Gradle</span>
-            </div>
-            <div class="panel-body">
-                @if($oLib->hasGradle())
-                <div class="input-group">
-                    <input type="text" class="form-control input-gradle" value="compile '{{ $oLib->gradle }}'" readonly>
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-gradle"
-                            data-toggle="tooltip" data-title="Click to select inputs content"><i class="fa fa-fw fa-clipboard"></i></button>
                     </div>
                 </div>
-                @else
-                <p class="text-center">We do not have any information about gradle support.</p>
-                @endif
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-info"></i>Details</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body padding-sm">
+                        <table class="table">
+                            <tr>
+                                <th class="no-border-t"><i class="fa fa-fw fa-calendar"></i> Added at:</th>
+                                <td class="no-border-t">{{ $oLib->getCreatedDate() }}</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-user"></i> Submitted by:</th>
+                                @if($oSubmittor != null)
+                                    <td>
+                                        <a href="{{ url('/user/' . $oSubmittor->username, [], true) }}" class="submittor"
+                                           data-content="<img src='{{ $oSubmittor->getAvatar() }}' alt='{{ $oSubmittor->username }}' class='img-responsive'>">{{ $oSubmittor->username }}</a>
+                                    </td>
+                                @else
+                                    <td>
+                                        Anonymous
+                                    </td>
+                                @endif
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-level-up"></i> Minimum SDK Level:</th>
+                                <td>{{ $oLib->getApiLevel() }}</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-tag"></i> Category:</th>
+                                <td><a href="{{ url('/search/' . $oLib->categories->slug, [], true) }}">{{ $oLib->categories->name }}</a></td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-thumbs-up"></i> Likes:</th>
+                                <td>{{ $oLib->likes->count() }}</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-check"></i> See also:</th>
+                                <td>
+                                    @foreach($oFiveRandomLibs as $oRandLib)
+                                        <a href="{{ url('/lib/' . $oRandLib->slug, [], true) }}">{{ $oRandLib->title }}</a><br>
+                                    @endforeach
+                                </td>
+                            </tr>
+                        </table>
+                    </div> <!-- / .panel-body -->
+                    @if(!$oLib->githubOk)
+                        <div class="panel-footer btn-footer">
+                            <a href="{{ $oLib->url }}" target="_blank" class="btn btn-block btn-primary btn-full"><i class="fa fa-fw fa-globe"></i> Website</a>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
     <div class="col-xs-12 col-md-4">
+
         <div class="panel">
             <div class="panel-heading">
                 <span class="panel-title"><i class="panel-title-icon fa fa-github-square"></i> GitHub Details</span>
@@ -265,7 +255,7 @@
                 @if($oLib->githubOk)
                     <table class="table">
 
-                            @if($oLib->githubOk)
+                        @if($oLib->githubOk)
                             <tr>
                                 <th class="no-border-t"><i class="fa fa-fw fa-user"></i> Owner:</th>
                                 <td class="no-border-t">
@@ -321,9 +311,9 @@
             <div class="panel-body padding-sm">
                 @if($oLib->githubOk)
                     @foreach($aContributors as $aContributor)
-                    <a href="{{ $aContributor['html_url'] }}" target="_blank" data-toggle="tooltip" class="thumbnail contr-thumb" data-title="{{ $aContributor['login'] . ' (' . $aContributor['contributions'] . ' commits)' }}">
-                        <img src="{{ $aContributor['avatar_url'] }}" alt="{{ $aContributor['login'] }}">
-                    </a>
+                        <a href="{{ $aContributor['html_url'] }}" target="_blank" data-toggle="tooltip" class="thumbnail contr-thumb" data-title="{{ $aContributor['login'] . ' (' . $aContributor['contributions'] . ' commits)' }}">
+                            <img src="{{ $aContributor['avatar_url'] }}" alt="{{ $aContributor['login'] }}">
+                        </a>
                     @endforeach
                 @else
                     <div class="text-center text-muted">
