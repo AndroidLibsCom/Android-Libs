@@ -130,6 +130,8 @@ return [
         'Thujohn\Rss\RssServiceProvider',
         'Stolz\Assets\ManagerServiceProvider',
         'Artdarek\OAuth\OAuthServiceProvider',
+        'VTalbot\Markdown\MarkdownServiceProvider',
+
     ],
 
     /*
@@ -201,6 +203,7 @@ return [
         'Carbon'            => 'Carbon/Carbon',
         'Rss'               => 'Thujohn\Rss\RssFacade',
         'OAuth'             => 'Artdarek\OAuth\Facade\OAuth',
+        'Markdown'          => 'VTalbot\Markdown\Facades\Markdown',
     ],
 
 ];

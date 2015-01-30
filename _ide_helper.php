@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.9 on 2014-12-22.
+ * Generated for Laravel 4.2.9 on 2015-01-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12859,6 +12859,45 @@ namespace {
          */
         public static function save($filename){
             return \Thujohn\Rss\Rss::save($filename);
+        }
+        
+    }
+
+
+    class OAuth extends \Artdarek\OAuth\Facade\OAuth{
+        
+        /**
+         * Detect config and set data from it
+         *
+         * @param string $service
+         * @static 
+         */
+        public static function loadConfig($service){
+            return \Artdarek\OAuth\OAuth::loadConfig($service);
+        }
+        
+        /**
+         * Set the http client object
+         *
+         * @param string $httpClientName
+         * @return void 
+         * @static 
+         */
+        public static function setHttpClient($httpClientName){
+            \Artdarek\OAuth\OAuth::setHttpClient($httpClientName);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $service
+         * @param string $url
+         * @param array $scope
+         * @return \OAuth\Common\Service\AbstractService 
+         * @static 
+         */
+        public static function consumer($service, $url = null, $scope = null){
+            return \Artdarek\OAuth\OAuth::consumer($service, $url, $scope);
         }
         
     }

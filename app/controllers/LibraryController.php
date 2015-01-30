@@ -48,6 +48,19 @@ class LibraryController extends BaseController
             try {
                 $aGitHub                        = GitHub::repo()->show($oLib->getGitHubUserName(), $oLib->getGitHubRepoName());
                 $this->data['aContributors']    = GitHub::repo()->contributors($oLib->getGitHubUserName(), $oLib->getGitHubRepoName());
+
+                foreach(['readme.md', 'README.MD', 'README.md'] as $sFilename)
+                {
+                    if($oLib->isGitHubUrl())
+                    {
+                        try {
+                            $aRGithub         = GitHub::repo()->contents()->show($oLib->getGitHubUserName(), $oLib->getGitHubRepoName(), '/' . $sFilename);
+                            $oLib->readme     = Markdown::string(base64_decode($aRGithub['content']));
+
+                        } catch (Exception $ex) {}
+                    }
+                }
+
                 $oLib->githubOk                 = true;
             } catch (Exception $ex) {
                 $oLib->githubOk = false;

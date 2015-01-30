@@ -145,9 +145,24 @@
         <div class="panel">
             <div class="panel-heading">
                 <span class="panel-title"><i class="panel-title-icon fa fa-file-text-o"></i> Description</span>
+                <ul class="nav nav-tabs nav-tabs-xs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#defaultDesc" aria-controls="defaultDesc" role="tab" data-toggle="tab"><i
+                                    class="fa fa-fw fa-file-text-o"></i> Description</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#readmeDesc" aria-controls="readmeDesc" role="tab" data-toggle="tab"><i
+                                    class="fa fa-fw fa-github-square"></i> README.MD</a>
+                    </li>
+                </ul>
             </div> <!-- / .panel-heading -->
-            <div class="panel-body padding-sm panel-description">
-                {{ $oLib->description }}
+            <div class="panel-body padding-sm panel-description tab-content">
+                <div role="tabpanel" class="tab-pane active" id="defaultDesc">
+                    {{ $oLib->description }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="readmeDesc">
+                    {{ $oLib->getReadme() }}
+                </div>
             </div> <!-- / .panel-body -->
         </div>
         <div class="row">
@@ -217,6 +232,14 @@
                             <tr>
                                 <th><i class="fa fa-fw fa-level-up"></i> Minimum SDK Level:</th>
                                 <td>{{ $oLib->getApiLevel() }}</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa fa-fw fa-download"></i> Download:</th>
+                                @if($oLib->githubOk)
+                                <td><a href="{{ $oLib->url }}/archive/master.zip" target="_blank">ZIP File</a></td>
+                                @else
+                                <td>&mdash;</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th><i class="fa fa-fw fa-tag"></i> Category:</th>

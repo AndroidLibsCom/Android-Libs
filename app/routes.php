@@ -17,6 +17,7 @@ Route::get('/index/{lastIndex}', 'IndexController@getIndexLibraries');
 Route::get('/featured', 'IndexController@showFeatured');
 Route::get('/lib/{slug}', 'LibraryController@showLibrary');
 Route::get('/about', 'IndexController@showAbout');
+Route::post('/suggest/feature', 'IndexController@suggestFeature');
 # SEO
 Route::get('/tags/{d}/{c}', function() {
     return Redirect::to('/');
@@ -106,11 +107,9 @@ Route::get('/rss', function() {
 
 Route::get('/test', function() {
     set_time_limit(0);
-/*
 
-
-
-    # Licenses
+    return Response::json(GitHub::repo()->show('RaizLabs', 'broker'));
+    /*# Licenses
     $oLibs      = Libraries::all();
     $aFileNames = [ 'README', 'README.md' ];
     $i = 0;
@@ -135,7 +134,7 @@ Route::get('/test', function() {
                     }
 
                 } catch (Exception $ex) {
-                    /*if($i == 2)
+                    if($i == 2)
                     {
                         return Response::json(['error' => true, 'message' => $ex->getMessage()]);
                     }
@@ -143,8 +142,8 @@ Route::get('/test', function() {
             }
         }
     }
-    return Response::json(['libs_changed' => $i ]);
-*/
+    return Response::json();*/
+
     /*
     # Licenses
     $aFileNames = [ 'LICENSE', 'LICENSE.md', 'LICENSE.txt' ];
@@ -167,11 +166,4 @@ Route::get('/test', function() {
 
     return Response::json($aGitHub);
     }*/
-});
-
-Route::get('/keywords', function() {
-	foreach(Libraries::all() as $oLib)
-	{
-		echo $oLib->title . ',';
-	}
 });

@@ -31,6 +31,19 @@ class IndexController extends BaseController {
         return View::make("index", $this->data);
     }
 
+    /*
+     * Submit the mail for feature suggestion
+     */
+    public function suggestFeature()
+    {
+        Mail::send('emails.suggestion', ['sEmail' => Input::get('email'), 'sSuggestion' => Input::get('suggestion')], function($message)
+        {
+            $message->from(Input::get('email'), 'Feauture Suggestion');
+            $message->to(['info@android-libs.com', 'cdanasiri@gmail.com', 'mahrt95@gmail.com'], 'Android-Libs Team')->subject('AndroidLibs - Feature Suggestion');
+        });
+
+        return Redirect::to('/')->with('success', true)->with('message', 'Thank you for your suggestion! We will contact you as soon as possible.');
+    }
 
     /*
  * Show main page with list of android libraries

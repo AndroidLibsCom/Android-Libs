@@ -131,5 +131,9 @@ class Libraries extends Eloquent implements SluggableInterface {
         }
     }
 
+    public function getReadme()
+    {
+        return strlen($this->readme) > 0 ? str_replace('http://', 'https://', $this->readme) : 'We could not fetch the readme from GitHub.';
+    }
 
 }

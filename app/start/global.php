@@ -100,7 +100,7 @@ Assets::add([
     'assets/css/lightbox.min.css',
     '//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css',
     '//fonts.googleapis.com/css?family=Open+Sans:100,300,600',
-    'assets/css/template.css',
+    'assets/css/template.min.css',
     'https://code.jquery.com/jquery-1.10.2.min.js',
     'assets/js/bootstrap.min.js',
     'assets/js/bootbox.min.js',

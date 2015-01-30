@@ -267,6 +267,10 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Sentry::getUser()->username }}</a>
                                     <ul class="dropdown-menu text-left">
                                         <li><a href="{{ url('/user/profile', [], true) }}"><i class="fa fa-fw fa-cog"></i> Profile / Settings</a></li>
+                                        @if(Sentry::getUser()->hasAccess('admin'))
+                                            <li><a href="{{ url('/admin', [], true) }}"><i class="fa fa-fw fa-star"></i> Admin</a></li>
+                                            <li><a href="{{ url('/admin#submitted-libs', [], true) }}"><i class="fa fa-fw fa-star"></i> Submitted Libs</a></li>
+                                        @endif
                                         <li><a href="{{ url('/logout', [], true) }}"><i class="fa fa-fw fa-power-off"></i> Sign out</a></li>
                                     </ul>
                                 </li>
@@ -274,9 +278,12 @@
                                 <li><a href="{{ url('/login', [], true) }}">Sign in</a></li>
                             @endif
                             <li class="hidden-sm"><a href="{{ url('/rss', [], true) }}" target="_blank">RSS</a></li>
+                            {{--<li class="hidden-sm hidden-md"><a href="#featureModal" data-toggle="modal" data-target="#featureModal">Suggest feature</a></li>--}}
                             <li class="dropdown dropdown-nav hidden-sm">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Social</a>
                                 <ul class="dropdown-menu text-left">
+                                    <li><a href="https://www.pushbullet.com/channel?tag=android-libs" target="_blank"><i
+                                                    class="fa fa-fw fa-bullhorn"></i> Pushbullet</a></li>
                                     <li><a href="https://twitter.com/Android_Libs" target="_blank"><i
                                                     class="fa fa-fw fa-twitter"></i> @Android_Libs</a></li>
                                     <li><a href="https://twitter.com/AlexMahrt" target="_blank"><i
@@ -308,6 +315,10 @@
                                     class="fa fa-fw fa-user"></i> {{ Sentry::getUser()->username }}</a>
                         <ul class="dropdown-menu text-left">
                             <li><a href="{{ url('/user/profile', [], true) }}"><i class="fa fa-fw fa-cog"></i> Profile / Settings</a></li>
+                            @if(Sentry::getUser()->hasAccess('admin'))
+                                <li><a href="{{ url('/admin', [], true) }}"><i class="fa fa-fw fa-star"></i> Admin</a></li>
+                                <li><a href="{{ url('/admin#submitted-libs', [], true) }}"><i class="fa fa-fw fa-star"></i> Submitted Libs</a></li>
+                            @endif
                             <li><a href="{{ url('/logout', [], true) }}"><i class="fa fa-fw fa-power-off"></i> Sign out</a></li>
                         </ul>
                     </li>
@@ -333,6 +344,10 @@
                                         class="fa fa-fw fa-heart"></i> Gratipay</a></li>
                     </ul>
                 </li>
+                <li><a href="https://www.pushbullet.com/channel?tag=android-libs" target="_blank"><i
+                                class="fa fa-fw fa-bullhorn"></i> Pushbullet</a></li>
+                {{--<li><a href="#featureModal" data-toggle="modal" data-target="#featureModal"><i--}}
+                                {{--class="fa fa-fw fa-check"></i> Suggest feature</a></li>--}}
                 <li><a href="{{ url('/submit', [], true) }}"><i class="fa fa-fw fa-envelope"></i> Submit Library</a></li>
             </ul>
         </div>
@@ -346,6 +361,14 @@
 </div>
 
 {{ Assets::js() }}
-
+<script type="text/javascript">
+    var _urq = _urq || [];
+    _urq.push(['initSite', '2f47c0d1-2495-4391-8afa-c05b54d146e8']);
+    (function() {
+        var ur = document.createElement('script'); ur.type = 'text/javascript'; ur.async = true;
+        ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
+    })();
+</script>
 </body>
 </html>

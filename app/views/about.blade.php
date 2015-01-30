@@ -39,6 +39,15 @@
             <br>
             <h4>Partners</h4>
             <p>We are looking for partners. <a href="mailto:info@android-libs.com?subject=Partnership" target="_blank">Please drop us a line,</a> if you'd like to become one.</p>
+            <br>
+            <h4>Side Projects</h4>
+            <p>
+                We are working on a couple of side-projects. Some of them are android related; check them out:
+            </p>
+            <ul>
+                <li><a href="http://android-jobs.eu" target="_blank">AndroidJobs - A Portal for android related jobs</a></li>
+                <li><strong>Coming soon:</strong> Android-Tutorials - How can I...? Answer your question in our upcoming portal!</li>
+            </ul>
         </div>
     </div>
 @stop
