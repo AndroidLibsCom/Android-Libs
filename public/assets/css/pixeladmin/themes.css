@@ -7871,6 +7871,7 @@
 .theme-clean a.list-group-item.active .list-group-item-text {
   color: #b3eecc;
 }
+
 .theme-clean .form-control:focus,
 .theme-clean .form-control.focus {
   border-color: #27ae60;

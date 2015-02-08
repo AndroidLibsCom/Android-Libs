@@ -60,6 +60,9 @@
                         <span class="btn-label icon fa fa-thumbs-up"></span> Like
                     </a>
                     @endif
+                    <a class="btn btn-primary btn-labeled" href="#shieldGenerator" data-toggle="modal" data-target="#shieldGenerator">
+                        <span class="btn-label icon fa fa-shield"></span> Shield.IO
+                    </a>
                     <a href="#" class="btn btn-facebook facebook sharrre btn-labeled" data-text="I've found this awesome library on Android-Libs! @Android_Libs" data-url="{{ url('/lib/' . $oLib->slug, [], true) }}" data-share="facebook">
                         <span class="btn-label icon fa fa-facebook"></span> Facebook
                     </a>
@@ -107,7 +110,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin-bottom-10">
                     	<div class="col-xs-12">
                     	    <div class="btn-group max-width">
                                 <button type="button" class="btn btn-default btn-labeled btn-block" data-toggle="dropdown" aria-expanded="false">
@@ -132,6 +135,13 @@
                                 </ul>
                     	    </div>
                     	</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a class="btn btn-primary btn-block btn-labeled" href="#shieldGenerator" data-toggle="modal" data-target="#shieldGenerator">
+                                <span class="btn-label icon fa fa-shield"></span> Shield.IO
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -270,6 +280,14 @@
     </div>
     <div class="col-xs-12 col-md-4">
 
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title"><i class="panel-title-icon fa fa-adn"></i> ADS</span>
+            </div>
+            <div class="panel-body padding-sm">
+                <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=androidlibscom" id="_carbonads_js"></script>
+            </div>
+        </div>
         <div class="panel">
             <div class="panel-heading">
                 <span class="panel-title"><i class="panel-title-icon fa fa-github-square"></i> GitHub Details</span>

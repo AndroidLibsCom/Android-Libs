@@ -1,0 +1,11 @@
+@extends('layout')
+
+@section('content')
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+            <h3>Legal Disclosure</h3>
+            <hr>
+            Information in accordance with section 5 TMG<br/><br/>Alexander Mahrt<br/>Quadenstieg 2<br/>22453 Hamburg<br/><h4>Contact</h4>Telephone: +49 (0) 151 6492<br/>E-Mail: <a href="mailto:info@android-libs.com">info@android-libs.com</a><br/>Internetadresse: <a href="http://android-libs.com" target="_blank">http://android-libs.com</a><br/><h4>Disclaimer</h4>Accountability for content<br/>The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this context, please note that we are accordingly not obliged to monitor merely the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per &sect;&sect; 8 to 10 of the Telemedia Act (TMG).<br/><br/>Accountability for links<br/>Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.<br/><br/>Copyright<br/> Our web pages and their contents are subject to German copyright law. Unless expressly permitted by law (&sect; 44a et seq. of the copyright law), every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are allowed only for private use, so must not serve either directly or indirectly for earnings. Unauthorized utilization of copyrighted works is punishable (&sect; 106 of the copyright law).<br/><br/><i>Source: </i><a href="http://www.twigg.de/haftungsausschlussimpressumenglisch.htm" target="_blank">twigg.de</a><br/><br/>
+        </div>
+    </div>
+@stop

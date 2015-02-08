@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+<div class="alert alert-success alert-dark">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4>Flippa.com</h4>
+    <p>This site is on sale on flippa.com: <a href="https://flippa.com/3830255-a-growing-android-developer-platform-100-000pageviews-m-14-000-uniques" target="_blank">Click to show flippa auction</a> </p>
+</div>
 {{--Show old search query--}}
 @if(Input::old('query', false) !== false)
     <div class="row">

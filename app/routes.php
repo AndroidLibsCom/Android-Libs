@@ -16,7 +16,6 @@ Route::get('/', 'IndexController@showIndex');
 Route::get('/index/{lastIndex}', 'IndexController@getIndexLibraries');
 Route::get('/featured', 'IndexController@showFeatured');
 Route::get('/lib/{slug}', 'LibraryController@showLibrary');
-Route::get('/about', 'IndexController@showAbout');
 Route::post('/suggest/feature', 'IndexController@suggestFeature');
 # SEO
 Route::get('/tags/{d}/{c}', function() {
@@ -167,3 +166,5 @@ Route::get('/test', function() {
     return Response::json($aGitHub);
     }*/
 });
+
+Route::get('/{page}', 'IndexController@showPage');

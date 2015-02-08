@@ -39,6 +39,14 @@
             <br>
             <h4>Partners</h4>
             <p>We are looking for partners. <a href="mailto:info@android-libs.com?subject=Partnership" target="_blank">Please drop us a line,</a> if you'd like to become one.</p>
+            <p><strong>Our current partners are:</strong></p>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <a class="thumbnail" href="http://androidweekly.net" target="_blank">
+                        <img src="{{ asset('assets/img/android_weekly.png') }}" alt="AndroidWeekly.net">
+                    </a>
+                </div>
+            </div>
             <br>
             <h4>Side Projects</h4>
             <p>

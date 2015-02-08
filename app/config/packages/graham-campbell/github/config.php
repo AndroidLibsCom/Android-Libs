@@ -46,8 +46,8 @@ return array(
             'token'   => '355bd8b2d525f8d5363b37f1a37e765ce8d44a03 '
         ),
 
-        'alternative' => array(
-            'token'   => 'your-token'
+        'pr' => array(
+            'token'   => 'dc162817daadb11870b28a4e13effa0656c18c4e'
         )
 
     )

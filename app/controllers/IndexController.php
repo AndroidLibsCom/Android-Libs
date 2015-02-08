@@ -84,11 +84,15 @@ class IndexController extends BaseController {
     }
 
     /*
-     * Shows the about us page
+     * Shows a page
      */
-    public function showAbout()
+    public function showPage($sPage)
     {
-        return View::make('about', $this->data);
+        try {
+            return View::make(strtolower($sPage), $this->data);
+        } catch (InvalidArgumentException $ex) {
+            App::abort(404, 'Page not found');
+        }
     }
     /*
      * Prepare libraries

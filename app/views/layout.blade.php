@@ -63,171 +63,6 @@
 @yield('body', '<body class="no-main-menu theme-clean dont-animate-mm-content-sm animate-mm-md animate-mm-lg">')
 @endif
 <div id="main-wrapper">
-
-
-    {{--<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
-    <!-- Main menu toggle -->
-    <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span>
-    </button>
-
-    <div class="navbar-inner">
-    <!-- Main navbar header -->
-    <div class="navbar-header">
-
-        <!-- Logo -->
-        <a href="{{ url('/', [], true) }}" class="navbar-brand">
-            <div><img alt="Pixel Admin" src="{{ asset('/assets/img/navbar_logo.png', true) }}"></div>
-            Android-Libs
-        </a>
-
-        <!-- Main navbar toggle -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i
-                class="navbar-icon fa fa-bars"></i></button>
-
-    </div>
-    <!-- / .navbar-header -->
-
-    <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
-    <div>
-    <ul class="nav navbar-nav">
-        <li class="dropdown">
-            <a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-list"></i> LIBRARIES <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="{{ url('/featured', [], true) }}"><i class="fa fa-fw fa-star"></i> Featured</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="{{ url('/', [], true) }}"><i class="fa fa-fw fa-search"></i> All</a>
-                </li>
-	    </ul>
-	</li>
-        <li>
-            <a href="{{ url('/submit', [], true) }}"><i class="fa fa-fw fa-envelope"></i> SUBMIT</a>
-        </li>
-	    
-	
-        <li class="dropdown">
-            <a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-share-alt"></i> SHARE</a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#" class="sharrre-counters facebook btn-labeled" data-text="Cool library list! @Android_Libs" data-url="{{ url('/', [], true) }}" data-share="facebook">
-                        <i class="fa fa-fw fa-facebook"></i> Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="sharrre-counters twitter btn-labeled" data-text="Cool library list! @Android_Libs" data-url="{{ url('/', [], true) }}" data-share="twitter">
-                        <i class="fa fa-fw fa-twitter"></i> Twitter
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="sharrre-counters gplus btn-labeled" data-text="Cool library list! @Android_Libs" data-url="{{ url('/', [], true) }}" data-share="gplus">
-                        <i class="fa fa-fw fa-google-plus"></i> Google+
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="https://github.com/AndroidLibsCom/Android-Libs" target="_blank">
-                <i class="fa fa-fw fa-github-square"></i> REPO
-            </a>
-        </li>
-        <li>
-            <a href="https://gitter.im/AndroidLibsCom/Android-Libs" target="_blank">
-                <i class="fa fa-fw fa-comments"></i> CHAT
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('/rss', [], true) }}" target="_blank">
-                <i class="fa fa-fw fa-rss-square"></i> RSS
-            </a>
-        </li>
-	<li>
-	    <a href="https://www.pushbullet.com/channel?tag=android-libs" target="_blank">
-		<i class="fa fa-fw fa-bullhorn"></i> PUSHBULLET
-	    </a>
-	</li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-	<li class="dropdown">
-	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		<i class="fa fa-fw fa-group"></i> Social <i class="fa fa-fw fa-caret-down"></i>
-	</a>
-	<ul class="dropdown-menu" role="menu">
-        <li>
-            <a href="http://twitter.com/Android_Libs" target="_blank"><i class="fa fa-fw fa-twitter"></i> Android-Libs</a>
-        </li>
-        <li>
-            <a href="http://twitter.com/AlexMahrt" target="_blank"><i class="fa fa-fw fa-twitter"></i> AlexMahrt</a>
-        </li>
-        <li>
-            <a href="https://lk.linkedin.com/in/chathurawijesinghe" target="_blank"><i class="fa fa-fw fa-linkedin"></i> Chathura</a>
-        </li>
-        <li>
-            <a href="https://gratipay.com/cyruxx" target="_blank"><i class="fa fa-fw fa-heart"></i> GratiPay</a>
-        </li>
-	</ul>
-        @if( Sentry::check() )
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
-                <img src="{{ Sentry::getUser()->getAvatar() }}">
-                <span>{{ Sentry::getUser()->username }} <i class="fa fa-fw fa-caret-down"></i> </span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="{{ url('/user/profile', [], true) }}"><i class="fa fa-fw fa-user"></i> Profile</a></li>
-                <li><a href="{{ url('/user/profile#likes', [], true) }}"><i class="fa fa-fw fa-thumbs-up"></i> Likes</a></li>
-                @if( Sentry::getUser()->hasAnyAccess([ 'admin' ]) )
-                <li><a href="{{ url('/admin', [], true) }}"><i class="fa fa-fw fa-star dropdown-icon"></i> Administration</a></li>
-                @endif
-                <li class="divider"></li>
-                <li><a href="{{ url('/logout', [], true) }}"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
-            </ul>
-        </li>
-        @else
-        <li><a href="{{ url('/login', [], true) }}"><i class="fa fa-fw fa-sign-in"></i> Sign in</a></li>
-        <li><a href="{{ url('/register', [], true) }}"><i class="fa fa-fw fa-check"></i> Sign up</a></li>
-        @endif
-    </ul>
-    <!-- / .navbar-nav -->
-
-    <div class="right clearfix">
-    <ul class="nav navbar-nav pull-right right-navbar-nav">
-
-    <!-- 3. $NAVBAR_ICON_BUTTONS =======================================================================
-
-                                Navbar Icon Buttons
-
-                                NOTE: .nav-icon-btn triggers a dropdown menu on desktop screens only. On small screens .nav-icon-btn acts like a hyperlink.
-
-                                Classes:
-                                * 'nav-icon-btn-info'
-                                * 'nav-icon-btn-success'
-                                * 'nav-icon-btn-warning'
-                                * 'nav-icon-btn-danger'
-    -->
-    <!-- /3. $END_NAVBAR_ICON_BUTTONS -->
-    --}}{{--
-
-    <li>
-        <form class="navbar-form search-libs-form pull-left">
-            <input type="text" class="form-control" placeholder="Search">
-        </form>
-    </li>
-    --}}{{--
-
-
-
-    </ul>
-    <!-- / .navbar-nav -->
-    </div>
-    <!-- / .right -->
-    </div>
-    </div>
-    <!-- / #main-navbar-collapse -->
-    </div>
-    <!-- / .navbar-inner -->
-    </div>--}}
-
     <header>
         <div class="container">
             <div class="row">
@@ -357,6 +192,16 @@
         @include('alerts')
         @yield('content')
     </main>
+
+
+    <footer>
+        <div class="container text-center">
+            <p>
+                &copy; 2015 &mdash; AndroidLibs | <a href="{{ url('/imprint', [], true) }}">Imprint</a> &middot; <a href="{{ url('/privacy', [], true) }}">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
     @include('modals.global')
 </div>
 
